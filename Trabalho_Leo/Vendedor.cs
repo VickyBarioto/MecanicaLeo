@@ -35,16 +35,12 @@ namespace Trabalho_Leo
         /// </summary>
         private void Vendedor_Load(object sender, EventArgs e)
         {
-            // Inicialmente, todos os botões estão habilitados
             HabilitarBotoes(true, true, true, true);
+            OcultarBotoes(false, false);
         }
         /// <summary>
         /// Habilita ou desabilita os botões do formulário.
         /// </summary>
-        /// <param name="inserir">Estado do botão de inserir.</param>
-        /// <param name="procurar">Estado do botão de procurar.</param>
-        /// <param name="atualizar">Estado do botão de atualizar.</param>
-        /// <param name="deletar">Estado do botão de deletar.</param>
         private void HabilitarBotoes(bool inserir, bool procurar, bool atualizar, bool deletar)
         {
             btn_inserirvendedor.Enabled = inserir;
@@ -52,11 +48,18 @@ namespace Trabalho_Leo
             btn_atualizarvendedor.Enabled = atualizar;
             btn_deletarvendedor.Enabled = deletar;
         }
+
+        /// <summary>
+        /// Mostra ou oculta os botões de Salvar e Cancelar.
+        /// </summary>
+        private void OcultarBotoes(bool salvar, bool cancelar)
+        {
+            btn_salvarVendedor.Visible = salvar;
+            btn_cancelarVendedor.Visible = cancelar;
+        }
         /// <summary>
         /// Valida se os campos obrigatórios estão preenchidos.
         /// </summary>
-        /// <param name="campos">Lista de campos a validar.</param>
-        /// <returns>True se todos os campos estiverem preenchidos, false caso contrário.</returns>
         private bool ValidarCamposObrigatorios(params TextBox[] campos)
         {
             foreach (var campo in campos)
@@ -69,11 +72,33 @@ namespace Trabalho_Leo
             }
             return true;
         }
-        /// <summary>
-        /// Executa um comando no banco de dados com base na query e configuração fornecidas.
+
+        /// Obtém o próximo ID disponível no banco de dados e o exibe no campo de ID.
         /// </summary>
-        /// <param name="configuracaoComando">Ação que configura os parâmetros do comando.</param>
-        /// <param name="query">A query SQL a ser executada.</param>
+        private void ObterProximoIdDisponivel()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=trabalho;uid=root;pwd=;port=3306;"))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT IFNULL(MAX(id), 0) + 1 FROM vendedores";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        txt_id.Text = resultado != null ? resultado.ToString() : "1";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao obter próximo ID: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Executa um comando no banco de dados.
+        /// </summary>
         private void ExecutarComandoNoBanco(Action<MySqlCommand> configuracaoComando, string query)
         {
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=trabalho;uid=root;pwd=;port=3306;"))
@@ -159,53 +184,9 @@ namespace Trabalho_Leo
         /// </summary>
         private void btn_inserirvendedor_Click(object sender, EventArgs e)
         {
-            // Desabilita os outros botões ao inserir
-            HabilitarBotoes(true, false, false, false);
-
-            // Validação dos campos obrigatórios
-            if (string.IsNullOrWhiteSpace(txt_nomevendedor.Text))
-            {
-                MessageBox.Show("Por favor, preencha o nome do vendedor antes de inserir.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txt_cpfvendedor.Text))
-            {
-                MessageBox.Show("Por favor, preencha o CPF do vendedor antes de inserir.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txt_emailvendedor.Text))
-            {
-                MessageBox.Show("Por favor, preencha o Email do vendedor antes de inserir.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=trabalho;uid=root;pwd=;port=3306;"))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "INSERT INTO vendedores (nome, endereco, cpf, email) VALUES (@nome, @endereco, @cpf, @email)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@nome", txt_nomevendedor.Text);
-                        cmd.Parameters.AddWithValue("@endereco", txt_enderecovendedor.Text);
-                        cmd.Parameters.AddWithValue("@cpf", txt_cpfvendedor.Text);
-                        cmd.Parameters.AddWithValue("@email", txt_emailvendedor.Text);
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Vendedor inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao inserir vendedor: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            // Habilita os botões novamente após a operação
-            HabilitarBotoes(true, true, true, true);
+            HabilitarBotoes(false, false, false, false);
+            OcultarBotoes(true, true);
+            ObterProximoIdDisponivel();
         }
 
         /// <summary>
@@ -235,10 +216,10 @@ namespace Trabalho_Leo
                                 if (reader.Read())
                                 {
                                     txt_id.Text = reader["id"].ToString();
-                                    txt_nomevendedor.Text = reader["nome"].ToString();
-                                    txt_enderecovendedor.Text = reader["endereco"].ToString();
+                                    txt_nomeVendedor.Text = reader["nome"].ToString();
+                                    txt_enderecoVendedor.Text = reader["endereco"].ToString();
                                     txt_telefonevendedor.Text = reader["telefone"].ToString();
-                                    txt_emailvendedor.Text = reader["email"].ToString();
+                                    txt_emailVendedor.Text = reader["email"].ToString();
                                 }
                                 else
                                 {
@@ -261,17 +242,17 @@ namespace Trabalho_Leo
         /// </summary>
         private void btn_atualizarvendedor_Click(object sender, EventArgs e)
         {
-            if (!ValidarCamposObrigatorios(txt_id, txt_nomevendedor))
+            if (!ValidarCamposObrigatorios(txt_id, txt_nomeVendedor))
                 return;
 
             string query = "UPDATE vendedores SET nome = @nome, endereco = @endereco, telefone = @telefone, email = @email WHERE id = @id";
             ExecutarComandoNoBanco(cmd =>
             {
                 cmd.Parameters.AddWithValue("@id", txt_id.Text);
-                cmd.Parameters.AddWithValue("@nome", txt_nomevendedor.Text);
-                cmd.Parameters.AddWithValue("@endereco", txt_enderecovendedor.Text);
+                cmd.Parameters.AddWithValue("@nome", txt_nomeVendedor.Text);
+                cmd.Parameters.AddWithValue("@endereco", txt_enderecoVendedor.Text);
                 cmd.Parameters.AddWithValue("@telefone", txt_telefonevendedor.Text);
-                cmd.Parameters.AddWithValue("@email", txt_emailvendedor.Text);
+                cmd.Parameters.AddWithValue("@email", txt_emailVendedor.Text);
             }, query);
 
             MessageBox.Show("Cadastro atualizado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -304,6 +285,43 @@ namespace Trabalho_Leo
         private void cbb_nivelvendedor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_cancelarVendedor_Click(object sender, EventArgs e)
+        {
+            HabilitarBotoes(true, true, true, true);
+            OcultarBotoes(false, false);
+        }
+
+        private void btn_salvarVendedor_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCamposObrigatorios(txt_nomeVendedor, txt_cpfVendedor, txt_emailVendedor))
+                return;
+
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=trabalho;uid=root;pwd=;port=3306;"))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO vendedores (nome, endereco, cpf, email) VALUES (@nome, @endereco, @cpf, @email)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", txt_nomeVendedor.Text);
+                        cmd.Parameters.AddWithValue("@endereco", txt_enderecoVendedor.Text);
+                        cmd.Parameters.AddWithValue("@cpf", txt_cpfVendedor.Text);
+                        cmd.Parameters.AddWithValue("@email", txt_emailVendedor.Text);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Vendedor inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao inserir vendedor: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            HabilitarBotoes(true, true, true, true);
+            OcultarBotoes(false, false);
         }
     }
 }

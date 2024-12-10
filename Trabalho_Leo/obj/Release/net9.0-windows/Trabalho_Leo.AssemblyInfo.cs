@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Trabalho_Leo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcef72aceca3d4bf447515ad3bccf973b26e59ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeef31709fc1238cae549cf8bea1d9fc79b678ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Trabalho_Leo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Trabalho_Leo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

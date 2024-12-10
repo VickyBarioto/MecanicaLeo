@@ -47,6 +47,10 @@
             btn_atualizarproduto = new Button();
             btn_procurarproduto = new Button();
             btn_inserirproduto = new Button();
+            label8 = new Label();
+            txt_id = new TextBox();
+            btn_salvarProduto = new Button();
+            btn_cancelarProduto = new Button();
             SuspendLayout();
             // 
             // label1
@@ -181,6 +185,7 @@
             btn_deletarproduto.TabIndex = 35;
             btn_deletarproduto.Text = "DELETAR";
             btn_deletarproduto.UseVisualStyleBackColor = true;
+            btn_deletarproduto.Click += btn_deletarproduto_Click;
             // 
             // btn_atualizarproduto
             // 
@@ -191,6 +196,7 @@
             btn_atualizarproduto.TabIndex = 34;
             btn_atualizarproduto.Text = "ATUALIZAR";
             btn_atualizarproduto.UseVisualStyleBackColor = true;
+            btn_atualizarproduto.Click += btn_atualizarproduto_Click;
             // 
             // btn_procurarproduto
             // 
@@ -201,6 +207,7 @@
             btn_procurarproduto.TabIndex = 33;
             btn_procurarproduto.Text = "PROCURAR";
             btn_procurarproduto.UseVisualStyleBackColor = true;
+            btn_procurarproduto.Click += btn_procurarproduto_Click;
             // 
             // btn_inserirproduto
             // 
@@ -213,11 +220,56 @@
             btn_inserirproduto.UseVisualStyleBackColor = true;
             btn_inserirproduto.Click += btn_inserirproduto_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(486, 98);
+            label8.Name = "label8";
+            label8.Size = new Size(18, 15);
+            label8.TabIndex = 37;
+            label8.Text = "ID";
+            // 
+            // txt_id
+            // 
+            txt_id.Location = new Point(519, 95);
+            txt_id.Name = "txt_id";
+            txt_id.ReadOnly = true;
+            txt_id.Size = new Size(167, 23);
+            txt_id.TabIndex = 38;
+            // 
+            // btn_salvarProduto
+            // 
+            btn_salvarProduto.Location = new Point(402, 417);
+            btn_salvarProduto.Margin = new Padding(3, 2, 3, 2);
+            btn_salvarProduto.Name = "btn_salvarProduto";
+            btn_salvarProduto.Size = new Size(82, 22);
+            btn_salvarProduto.TabIndex = 39;
+            btn_salvarProduto.Text = "SALVAR";
+            btn_salvarProduto.UseVisualStyleBackColor = true;
+            btn_salvarProduto.Visible = false;
+            btn_salvarProduto.Click += btn_salvarProduto_Click;
+            // 
+            // btn_cancelarProduto
+            // 
+            btn_cancelarProduto.Location = new Point(490, 417);
+            btn_cancelarProduto.Margin = new Padding(3, 2, 3, 2);
+            btn_cancelarProduto.Name = "btn_cancelarProduto";
+            btn_cancelarProduto.Size = new Size(82, 22);
+            btn_cancelarProduto.TabIndex = 40;
+            btn_cancelarProduto.Text = "CANCELAR";
+            btn_cancelarProduto.UseVisualStyleBackColor = true;
+            btn_cancelarProduto.Visible = false;
+            btn_cancelarProduto.Click += btn_cancelarProduto_Click;
+            // 
             // Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_cancelarProduto);
+            Controls.Add(btn_salvarProduto);
+            Controls.Add(txt_id);
+            Controls.Add(label8);
             Controls.Add(btn_sairproduto);
             Controls.Add(btn_deletarproduto);
             Controls.Add(btn_atualizarproduto);
@@ -265,5 +317,9 @@
         private Button btn_atualizarproduto;
         private Button btn_procurarproduto;
         private Button btn_inserirproduto;
+        private Label label8;
+        private TextBox txt_id;
+        private Button btn_salvarProduto;
+        private Button btn_cancelarProduto;
     }
 }

@@ -40,21 +40,21 @@
             label10 = new Label();
             txt_id = new TextBox();
             txt_Senha = new TextBox();
-            txt_nomevendedor = new TextBox();
-            txt_enderecovendedor = new TextBox();
-            txt_bairrovendedor = new TextBox();
-            txt_cepvendedor = new TextBox();
-            txt_cidadevendedor = new TextBox();
-            txt_estadovendedor = new TextBox();
+            txt_nomeVendedor = new TextBox();
+            txt_enderecoVendedor = new TextBox();
+            txt_bairroVendedor = new TextBox();
+            txt_cepVendedor = new TextBox();
+            txt_cidadeVendedor = new TextBox();
+            txt_estadoVendedor = new TextBox();
             txt_telefonevendedor = new TextBox();
             txt_admissaovendedor = new TextBox();
             lbl_numeroendereco = new Label();
-            txt_numeroendereco = new TextBox();
-            txt_afastamentovendedor = new TextBox();
+            txt_numeroEndereco = new TextBox();
+            txt_afastamentoVendedor = new TextBox();
             label11 = new Label();
-            txt_cargovendedor = new TextBox();
+            txt_cargoVendedor = new TextBox();
             label12 = new Label();
-            txt_emailvendedor = new TextBox();
+            txt_emailVendedor = new TextBox();
             label13 = new Label();
             btn_inserirvendedor = new Button();
             btn_procurarvendedor = new Button();
@@ -63,8 +63,10 @@
             btn_SairTelaInicio = new Button();
             label14 = new Label();
             cbb_nivelvendedor = new ComboBox();
-            txt_cpfvendedor = new TextBox();
+            txt_cpfVendedor = new TextBox();
             label15 = new Label();
+            btn_cancelarVendedor = new Button();
+            btn_salvarVendedor = new Button();
             SuspendLayout();
             // 
             // label1
@@ -180,59 +182,59 @@
             txt_Senha.TabIndex = 1;
             txt_Senha.TextChanged += txt_Senha_TextChanged;
             // 
-            // txt_nomevendedor
+            // txt_nomeVendedor
             // 
-            txt_nomevendedor.Location = new Point(75, 37);
-            txt_nomevendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_nomevendedor.Name = "txt_nomevendedor";
-            txt_nomevendedor.Size = new Size(586, 23);
-            txt_nomevendedor.TabIndex = 2;
-            txt_nomevendedor.TextChanged += txt_nomevendedor_TextChanged;
+            txt_nomeVendedor.Location = new Point(75, 37);
+            txt_nomeVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_nomeVendedor.Name = "txt_nomeVendedor";
+            txt_nomeVendedor.Size = new Size(586, 23);
+            txt_nomeVendedor.TabIndex = 2;
+            txt_nomeVendedor.TextChanged += txt_nomevendedor_TextChanged;
             // 
-            // txt_enderecovendedor
+            // txt_enderecoVendedor
             // 
-            txt_enderecovendedor.Location = new Point(75, 88);
-            txt_enderecovendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_enderecovendedor.Name = "txt_enderecovendedor";
-            txt_enderecovendedor.Size = new Size(471, 23);
-            txt_enderecovendedor.TabIndex = 3;
-            txt_enderecovendedor.TextChanged += txt_enderecovendedor_TextChanged;
+            txt_enderecoVendedor.Location = new Point(75, 88);
+            txt_enderecoVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_enderecoVendedor.Name = "txt_enderecoVendedor";
+            txt_enderecoVendedor.Size = new Size(471, 23);
+            txt_enderecoVendedor.TabIndex = 3;
+            txt_enderecoVendedor.TextChanged += txt_enderecovendedor_TextChanged;
             // 
-            // txt_bairrovendedor
+            // txt_bairroVendedor
             // 
-            txt_bairrovendedor.Location = new Point(75, 112);
-            txt_bairrovendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_bairrovendedor.Name = "txt_bairrovendedor";
-            txt_bairrovendedor.Size = new Size(241, 23);
-            txt_bairrovendedor.TabIndex = 5;
-            txt_bairrovendedor.TextChanged += txt_bairrovendedor_TextChanged;
+            txt_bairroVendedor.Location = new Point(75, 112);
+            txt_bairroVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_bairroVendedor.Name = "txt_bairroVendedor";
+            txt_bairroVendedor.Size = new Size(241, 23);
+            txt_bairroVendedor.TabIndex = 5;
+            txt_bairroVendedor.TextChanged += txt_bairrovendedor_TextChanged;
             // 
-            // txt_cepvendedor
+            // txt_cepVendedor
             // 
-            txt_cepvendedor.Location = new Point(359, 112);
-            txt_cepvendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_cepvendedor.Name = "txt_cepvendedor";
-            txt_cepvendedor.Size = new Size(302, 23);
-            txt_cepvendedor.TabIndex = 6;
-            txt_cepvendedor.TextChanged += txt_cepvendedor_TextChanged;
+            txt_cepVendedor.Location = new Point(359, 112);
+            txt_cepVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_cepVendedor.Name = "txt_cepVendedor";
+            txt_cepVendedor.Size = new Size(302, 23);
+            txt_cepVendedor.TabIndex = 6;
+            txt_cepVendedor.TextChanged += txt_cepvendedor_TextChanged;
             // 
-            // txt_cidadevendedor
+            // txt_cidadeVendedor
             // 
-            txt_cidadevendedor.Location = new Point(75, 135);
-            txt_cidadevendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_cidadevendedor.Name = "txt_cidadevendedor";
-            txt_cidadevendedor.Size = new Size(224, 23);
-            txt_cidadevendedor.TabIndex = 7;
-            txt_cidadevendedor.TextChanged += txt_cidadevendedor_TextChanged;
+            txt_cidadeVendedor.Location = new Point(75, 135);
+            txt_cidadeVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_cidadeVendedor.Name = "txt_cidadeVendedor";
+            txt_cidadeVendedor.Size = new Size(224, 23);
+            txt_cidadeVendedor.TabIndex = 7;
+            txt_cidadeVendedor.TextChanged += txt_cidadevendedor_TextChanged;
             // 
-            // txt_estadovendedor
+            // txt_estadoVendedor
             // 
-            txt_estadovendedor.Location = new Point(359, 136);
-            txt_estadovendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_estadovendedor.Name = "txt_estadovendedor";
-            txt_estadovendedor.Size = new Size(302, 23);
-            txt_estadovendedor.TabIndex = 8;
-            txt_estadovendedor.TextChanged += txt_estadovendedor_TextChanged;
+            txt_estadoVendedor.Location = new Point(359, 136);
+            txt_estadoVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_estadoVendedor.Name = "txt_estadoVendedor";
+            txt_estadoVendedor.Size = new Size(302, 23);
+            txt_estadoVendedor.TabIndex = 8;
+            txt_estadoVendedor.TextChanged += txt_estadovendedor_TextChanged;
             // 
             // txt_telefonevendedor
             // 
@@ -261,23 +263,23 @@
             lbl_numeroendereco.TabIndex = 20;
             lbl_numeroendereco.Text = "N°:";
             // 
-            // txt_numeroendereco
+            // txt_numeroEndereco
             // 
-            txt_numeroendereco.Location = new Point(580, 87);
-            txt_numeroendereco.Margin = new Padding(3, 2, 3, 2);
-            txt_numeroendereco.Name = "txt_numeroendereco";
-            txt_numeroendereco.Size = new Size(81, 23);
-            txt_numeroendereco.TabIndex = 4;
-            txt_numeroendereco.TextChanged += txt_numeroendereco_TextChanged;
+            txt_numeroEndereco.Location = new Point(580, 87);
+            txt_numeroEndereco.Margin = new Padding(3, 2, 3, 2);
+            txt_numeroEndereco.Name = "txt_numeroEndereco";
+            txt_numeroEndereco.Size = new Size(81, 23);
+            txt_numeroEndereco.TabIndex = 4;
+            txt_numeroEndereco.TextChanged += txt_numeroendereco_TextChanged;
             // 
-            // txt_afastamentovendedor
+            // txt_afastamentoVendedor
             // 
-            txt_afastamentovendedor.Location = new Point(409, 185);
-            txt_afastamentovendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_afastamentovendedor.Name = "txt_afastamentovendedor";
-            txt_afastamentovendedor.Size = new Size(252, 23);
-            txt_afastamentovendedor.TabIndex = 12;
-            txt_afastamentovendedor.TextChanged += txt_afastamentovendedor_TextChanged;
+            txt_afastamentoVendedor.Location = new Point(409, 185);
+            txt_afastamentoVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_afastamentoVendedor.Name = "txt_afastamentoVendedor";
+            txt_afastamentoVendedor.Size = new Size(252, 23);
+            txt_afastamentoVendedor.TabIndex = 12;
+            txt_afastamentoVendedor.TextChanged += txt_afastamentovendedor_TextChanged;
             // 
             // label11
             // 
@@ -288,14 +290,14 @@
             label11.TabIndex = 22;
             label11.Text = "Data de Afastamento:";
             // 
-            // txt_cargovendedor
+            // txt_cargoVendedor
             // 
-            txt_cargovendedor.Location = new Point(75, 184);
-            txt_cargovendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_cargovendedor.Name = "txt_cargovendedor";
-            txt_cargovendedor.Size = new Size(189, 23);
-            txt_cargovendedor.TabIndex = 11;
-            txt_cargovendedor.TextChanged += txt_cargovendedor_TextChanged;
+            txt_cargoVendedor.Location = new Point(75, 184);
+            txt_cargoVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_cargoVendedor.Name = "txt_cargoVendedor";
+            txt_cargoVendedor.Size = new Size(189, 23);
+            txt_cargoVendedor.TabIndex = 11;
+            txt_cargoVendedor.TextChanged += txt_cargovendedor_TextChanged;
             // 
             // label12
             // 
@@ -306,14 +308,14 @@
             label12.TabIndex = 24;
             label12.Text = "Cargo:";
             // 
-            // txt_emailvendedor
+            // txt_emailVendedor
             // 
-            txt_emailvendedor.Location = new Point(74, 209);
-            txt_emailvendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_emailvendedor.Name = "txt_emailvendedor";
-            txt_emailvendedor.Size = new Size(587, 23);
-            txt_emailvendedor.TabIndex = 13;
-            txt_emailvendedor.TextChanged += txt_emailvendedor_TextChanged;
+            txt_emailVendedor.Location = new Point(74, 209);
+            txt_emailVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_emailVendedor.Name = "txt_emailVendedor";
+            txt_emailVendedor.Size = new Size(587, 23);
+            txt_emailVendedor.TabIndex = 13;
+            txt_emailVendedor.TextChanged += txt_emailvendedor_TextChanged;
             // 
             // label13
             // 
@@ -398,13 +400,13 @@
             cbb_nivelvendedor.TabIndex = 33;
             cbb_nivelvendedor.SelectedIndexChanged += cbb_nivelvendedor_SelectedIndexChanged;
             // 
-            // txt_cpfvendedor
+            // txt_cpfVendedor
             // 
-            txt_cpfvendedor.Location = new Point(74, 61);
-            txt_cpfvendedor.Margin = new Padding(3, 2, 3, 2);
-            txt_cpfvendedor.Name = "txt_cpfvendedor";
-            txt_cpfvendedor.Size = new Size(587, 23);
-            txt_cpfvendedor.TabIndex = 34;
+            txt_cpfVendedor.Location = new Point(74, 61);
+            txt_cpfVendedor.Margin = new Padding(3, 2, 3, 2);
+            txt_cpfVendedor.Name = "txt_cpfVendedor";
+            txt_cpfVendedor.Size = new Size(587, 23);
+            txt_cpfVendedor.TabIndex = 34;
             // 
             // label15
             // 
@@ -415,13 +417,39 @@
             label15.TabIndex = 35;
             label15.Text = "CPF:";
             // 
+            // btn_cancelarVendedor
+            // 
+            btn_cancelarVendedor.Location = new Point(462, 253);
+            btn_cancelarVendedor.Margin = new Padding(3, 2, 3, 2);
+            btn_cancelarVendedor.Name = "btn_cancelarVendedor";
+            btn_cancelarVendedor.Size = new Size(82, 22);
+            btn_cancelarVendedor.TabIndex = 42;
+            btn_cancelarVendedor.Text = "CANCELAR";
+            btn_cancelarVendedor.UseVisualStyleBackColor = true;
+            btn_cancelarVendedor.Visible = false;
+            btn_cancelarVendedor.Click += btn_cancelarVendedor_Click;
+            // 
+            // btn_salvarVendedor
+            // 
+            btn_salvarVendedor.Location = new Point(374, 253);
+            btn_salvarVendedor.Margin = new Padding(3, 2, 3, 2);
+            btn_salvarVendedor.Name = "btn_salvarVendedor";
+            btn_salvarVendedor.Size = new Size(82, 22);
+            btn_salvarVendedor.TabIndex = 41;
+            btn_salvarVendedor.Text = "SALVAR";
+            btn_salvarVendedor.UseVisualStyleBackColor = true;
+            btn_salvarVendedor.Visible = false;
+            btn_salvarVendedor.Click += btn_salvarVendedor_Click;
+            // 
             // Vendedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(btn_cancelarVendedor);
+            Controls.Add(btn_salvarVendedor);
             Controls.Add(label15);
-            Controls.Add(txt_cpfvendedor);
+            Controls.Add(txt_cpfVendedor);
             Controls.Add(cbb_nivelvendedor);
             Controls.Add(label14);
             Controls.Add(btn_SairTelaInicio);
@@ -429,22 +457,22 @@
             Controls.Add(btn_atualizarvendedor);
             Controls.Add(btn_procurarvendedor);
             Controls.Add(btn_inserirvendedor);
-            Controls.Add(txt_emailvendedor);
+            Controls.Add(txt_emailVendedor);
             Controls.Add(label13);
-            Controls.Add(txt_cargovendedor);
+            Controls.Add(txt_cargoVendedor);
             Controls.Add(label12);
-            Controls.Add(txt_afastamentovendedor);
+            Controls.Add(txt_afastamentoVendedor);
             Controls.Add(label11);
-            Controls.Add(txt_numeroendereco);
+            Controls.Add(txt_numeroEndereco);
             Controls.Add(lbl_numeroendereco);
             Controls.Add(txt_admissaovendedor);
             Controls.Add(txt_telefonevendedor);
-            Controls.Add(txt_estadovendedor);
-            Controls.Add(txt_cidadevendedor);
-            Controls.Add(txt_cepvendedor);
-            Controls.Add(txt_bairrovendedor);
-            Controls.Add(txt_enderecovendedor);
-            Controls.Add(txt_nomevendedor);
+            Controls.Add(txt_estadoVendedor);
+            Controls.Add(txt_cidadeVendedor);
+            Controls.Add(txt_cepVendedor);
+            Controls.Add(txt_bairroVendedor);
+            Controls.Add(txt_enderecoVendedor);
+            Controls.Add(txt_nomeVendedor);
             Controls.Add(txt_Senha);
             Controls.Add(txt_id);
             Controls.Add(label10);
@@ -479,21 +507,21 @@
         private Label label10;
         private TextBox txt_id;
         private TextBox txt_Senha;
-        private TextBox txt_nomevendedor;
-        private TextBox txt_enderecovendedor;
-        private TextBox txt_bairrovendedor;
-        private TextBox txt_cepvendedor;
-        private TextBox txt_cidadevendedor;
-        private TextBox txt_estadovendedor;
+        private TextBox txt_nomeVendedor;
+        private TextBox txt_enderecoVendedor;
+        private TextBox txt_bairroVendedor;
+        private TextBox txt_cepVendedor;
+        private TextBox txt_cidadeVendedor;
+        private TextBox txt_estadoVendedor;
         private TextBox txt_telefonevendedor;
         private TextBox txt_admissaovendedor;
         private Label lbl_numeroendereco;
-        private TextBox txt_numeroendereco;
-        private TextBox txt_afastamentovendedor;
+        private TextBox txt_numeroEndereco;
+        private TextBox txt_afastamentoVendedor;
         private Label label11;
-        private TextBox txt_cargovendedor;
+        private TextBox txt_cargoVendedor;
         private Label label12;
-        private TextBox txt_emailvendedor;
+        private TextBox txt_emailVendedor;
         private Label label13;
         private Button btn_inserirvendedor;
         private Button btn_procurarvendedor;
@@ -502,7 +530,9 @@
         private Button btn_SairTelaInicio;
         private Label label14;
         private ComboBox cbb_nivelvendedor;
-        private TextBox txt_cpfvendedor;
+        private TextBox txt_cpfVendedor;
         private Label label15;
+        private Button btn_cancelarVendedor;
+        private Button btn_salvarVendedor;
     }
 }

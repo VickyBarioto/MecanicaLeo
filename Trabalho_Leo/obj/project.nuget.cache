@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yu6gk+AIPBA=",
+  "dgSpecHash": "iynEEN09usw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vicky\\Source\\Repos\\Trabalho_Leo\\Trabalho_Leo.csproj",
+  "projectFilePath": "C:\\Users\\vicky\\source\\repos\\MecanicaLeoSEILA QUAL A MERDA DA VERSAO\\Trabalho_Leo\\Trabalho_Leo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vicky\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\vicky\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

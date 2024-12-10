@@ -1802,11 +1802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vicky\\Source\\Repos\\Trabalho_Leo\\Trabalho_Leo.csproj",
+      "projectUniqueName": "C:\\Users\\vicky\\source\\repos\\MecanicaLeoSEILA QUAL A MERDA DA VERSAO\\Trabalho_Leo\\Trabalho_Leo.csproj",
       "projectName": "Trabalho_Leo",
-      "projectPath": "C:\\Users\\vicky\\Source\\Repos\\Trabalho_Leo\\Trabalho_Leo.csproj",
+      "projectPath": "C:\\Users\\vicky\\source\\repos\\MecanicaLeoSEILA QUAL A MERDA DA VERSAO\\Trabalho_Leo\\Trabalho_Leo.csproj",
       "packagesPath": "C:\\Users\\vicky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vicky\\Source\\Repos\\Trabalho_Leo\\obj\\",
+      "outputPath": "C:\\Users\\vicky\\source\\repos\\MecanicaLeoSEILA QUAL A MERDA DA VERSAO\\Trabalho_Leo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
